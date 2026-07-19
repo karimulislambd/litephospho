@@ -53,9 +53,9 @@ At realistic class prevalence (0.315) LitePhospho reaches PR-AUC 0.612 (1.9× th
     |-- LICENSE
 
 ## The benchmark split
-`data/litephospho_split.csv` lists every phosphoprotein with its 30%-identity cluster and its train/validation/test assignment. Use it to evaluate other methods on the exact same leakage-free partition.
+`data/litephospho_split.csv` lists all **19,625 phosphoproteins** with their 30%-identity cluster (**9,870 clusters**) and train/validation/test assignment (13,941 / 2,889 / 2,795 proteins). Use it to evaluate other methods on the exact same leakage-free partition.
 
-> **Note:** this file is currently being regenerated to match the corrected run. Until it is updated, reproduce the authoritative partition by running the data-preparation cells of `notebooks/litephospho_pipeline.ipynb`. MMseqs2 clustering is not bit-for-bit deterministic across runs; regenerated partitions differ by under 0.1% in size and reproduce held-out ROC-AUC to within 0.001.
+> **Reproducibility note:** MMseqs2 clustering is not bit-for-bit deterministic across runs. Regenerating the partition with the same code yields cluster and window counts differing by under 0.1%, and reproduces held-out ROC-AUC to within 0.001. The file shipped here is the authoritative partition; regenerate it with `notebooks/litephospho_export_split.ipynb` if needed.
 
 ## Data sources
 The raw databases are not redistributed here; download them from their providers and run the preprocessing in the notebook:
