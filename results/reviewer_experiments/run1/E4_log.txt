@@ -1,0 +1,36 @@
+
+$ cd /tmp/musite && curl -Ls https://micro.mamba.pm/api/micromamba/linux-64/latest | tar -xj bin/micromamba
+[exit 0]
+--- stdout ---
+
+--- stderr ---
+
+
+$ /tmp/musite/bin/micromamba create -y -q -p /tmp/musite/env -c conda-forge python=3.6 pip
+[exit 0]
+--- stdout ---
+
+--- stderr ---
+
+
+$ /tmp/musite/env/bin/pip install -q tensorflow==1.12.0 keras==2.2.4 numpy==1.16.6 h5py==2.10.0 protobuf==3.19.6 scipy==1.5.4 pandas==1.1.5 scikit-learn==0.24.2 pillow==8.4.0
+[exit 0]
+--- stdout ---
+
+--- stderr ---
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+
+
+$ cd /tmp/musite && git clone -q --depth 1 https://github.com/duolinwang/MusiteDeep_web.git
+[exit 0]
+--- stdout ---
+
+--- stderr ---
+
+
+$ sed -i 's/^    batch_size=500$/    batch_size=5000/' /tmp/musite/MusiteDeep_web/MusiteDeep/predict_multi_batch.py && grep -n 'batch_size=5000' /tmp/musite/MusiteDeep_web/MusiteDeep/predict_multi_batch.py
+[exit 1]
+--- stdout ---
+
+--- stderr ---
+
