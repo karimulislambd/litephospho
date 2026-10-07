@@ -2,6 +2,7 @@ torch
 numpy
 pandas
 scikit-learn
+scipy
 xgboost
 matplotlib
 captum
@@ -9,3 +10,4 @@ logomaker
 fair-esm
 onnx
 onnxscript
+onnxruntime
